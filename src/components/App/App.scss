@@ -10,9 +10,61 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: .5rem; 
-  }
-  .converter{
+    .exchange-icon {
+        font-size: 2rem;
+        color: #007BFF; 
+    }
+    button {
+        background-color: transparent;
+        border: none;
+    }
+    .exchange-icon {
+        font-size: 2rem;
+        color: #007BFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .exchange-icon button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+.converter{
     width: 100%;
     display: flex;
     flex-direction: column;
+    select{
+        text-align: right;
+        padding: .5rem 1.5rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: rgb(114, 114, 114);
+        font-size: 1.5rem;
+    }
+    option{
+        border: none;
+        outline: none;
+        padding: 1rem!important;
+        background-color: #f0f0f0!important;
+        border-radius: 1px!important;
+    }
+    input {
+        border: .5px solid #cfcfcf;
+        outline: none;
+        color:rgb(114, 114, 114);
+        text-align: center;
+        height: 5rem;
+        font-size: 2rem;
+    }
+    span {
+       padding-bottom: 1rem;
+       color: #007BFF;
+    }
 }

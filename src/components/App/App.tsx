@@ -22,12 +22,25 @@ const App = () => {
     }, [rates])
 
     const setFromInput = (event: ChangeEvent<HTMLInputElement>) => {
+        const updateCurrency = Number(event.target.value) * Number(toCurrency.rate);
+        setFromAmount(Number(event.target.value));
+        setToAmount(updateCurrency);
     }
 
     const setToInput = (event: ChangeEvent<HTMLInputElement>) => {
+        const updateInput = Number(event.target.value) / Number(toCurrency.rate);
+        setFromAmount(updateInput);
+        setToAmount(Number(event.target.value));
     }
 
     const setFromOption = (event: ChangeEvent<HTMLSelectElement>) => {
+        const selectedRate = parseFloat(event.target.value);
+        const selectedCurrency = rates.find(item => item.rate === selectedRate);
+        if (selectedCurrency) {
+            setToCurrency(selectedCurrency)
+        }
+        const updateCurrency = Number(event.target.value) * Number(fromAmount)
+        setToAmount(updateCurrency)
     }
 
     if(error){
@@ -50,6 +63,7 @@ const App = () => {
                                     symbol: ""
                                 }]} 
                             />
+                            <Input onChange={setFromInput} value={fromAmount}/>
                         </div>  
                         <div className="exchange-icon">
                             <button>&#x21C4;</button> 
@@ -60,6 +74,7 @@ const App = () => {
                                 onChange={setFromOption} 
                                 options={rates} 
                             />
+                            <Input onChange={setToInput} value={toAmount}/>
                         </div>  
                     </div>
                 </Card>

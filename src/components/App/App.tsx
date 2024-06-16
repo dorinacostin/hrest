@@ -46,6 +46,7 @@ const App = () => {
     if(error){
         console.error(error);
     }
+    
     return (
         <div>
             <div className="name"></div>
